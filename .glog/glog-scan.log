@@ -1,0 +1,648 @@
+Oct 06, 2025 4:11:37 PM ai.glog.execute.workers.TriageAndRemediationCallableWorker isFalsePositive
+SEVERE: {
+  "ruleId" : "DS121708",
+  "ruleIndex" : null,
+  "rule" : null,
+  "kind" : "FAIL",
+  "level" : "NOTE",
+  "message" : {
+    "text" : "Problematic C function detected (memcpy)",
+    "markdown" : null,
+    "id" : null,
+    "arguments" : null,
+    "properties" : null
+  },
+  "analysisTarget" : null,
+  "locations" : [ {
+    "id" : null,
+    "physicalLocation" : {
+      "address" : null,
+      "artifactLocation" : {
+        "uri" : "Eigen/src/Core/arch/NEON/PacketMath.h",
+        "uriBaseId" : null,
+        "index" : null,
+        "description" : null,
+        "properties" : null
+      },
+      "region" : {
+        "startLine" : 1909,
+        "startColumn" : 2,
+        "endLine" : 1909,
+        "endColumn" : 32,
+        "charOffset" : 87936,
+        "charLength" : 30,
+        "byteOffset" : null,
+        "byteLength" : null,
+        "snippet" : {
+          "text" : "memcpy(to, &from, sizeof(from)",
+          "binary" : null,
+          "rendered" : {
+            "text" : "memcpy(to, &from, sizeof(from)",
+            "markdown" : "`memcpy(to, &from, sizeof(from)`",
+            "properties" : null
+          },
+          "properties" : null
+        },
+        "message" : null,
+        "sourceLanguage" : "c",
+        "properties" : null
+      },
+      "contextRegion" : null,
+      "properties" : null
+    },
+    "logicalLocations" : null,
+    "message" : null,
+    "annotations" : null,
+    "relationships" : null,
+    "properties" : null
+  } ],
+  "guid" : null,
+  "correlationGuid" : null,
+  "occurrenceCount" : null,
+  "partialFingerprints" : null,
+  "fingerprints" : null,
+  "stacks" : null,
+  "codeFlows" : null,
+  "graphs" : null,
+  "graphTraversals" : null,
+  "relatedLocations" : null,
+  "suppressions" : null,
+  "baselineState" : null,
+  "rank" : null,
+  "attachments" : null,
+  "hostedViewerUri" : null,
+  "workItemUris" : null,
+  "provenance" : null,
+  "fixes" : [ {
+    "description" : {
+      "text" : "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer",
+      "markdown" : null,
+      "id" : null,
+      "arguments" : null,
+      "properties" : null
+    },
+    "artifactChanges" : [ {
+      "artifactLocation" : {
+        "uri" : "Eigen/src/Core/arch/NEON/PacketMath.h",
+        "uriBaseId" : null,
+        "index" : null,
+        "description" : null,
+        "properties" : null
+      },
+      "replacements" : [ {
+        "deletedRegion" : {
+          "startLine" : null,
+          "startColumn" : null,
+          "endLine" : null,
+          "endColumn" : null,
+          "charOffset" : 87936,
+          "charLength" : 30,
+          "byteOffset" : null,
+          "byteLength" : null,
+          "snippet" : null,
+          "message" : null,
+          "sourceLanguage" : null,
+          "properties" : null
+        },
+        "insertedContent" : {
+          "text" : "memcpy_s(to, <size of to>,  &from,  sizeof(from)",
+          "binary" : null,
+          "rendered" : null,
+          "properties" : null
+        },
+        "properties" : null
+      } ],
+      "properties" : null
+    } ],
+    "properties" : null
+  } ],
+  "taxa" : null,
+  "webRequest" : null,
+  "webResponse" : null,
+  "properties" : {
+    "DevSkimSeverity" : "BestPractice",
+    "DevSkimConfidence" : "High"
+  }
+}
+java.util.NoSuchElementException: next on empty iterator
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	at scala.collection.Iterator$$anon$6.next(Iterator.scala:492)
+	at flatgraph.traversal.GenericSteps$.head$extension(Language.scala:80)
+	at ai.glog.cpg.analysis.SinkAnalyzer$.getSink(SinkAnalyzer.scala:29)
+	at ai.glog.cpg.analysis.SinkAnalyzer.getSink(SinkAnalyzer.scala)
+	at ai.glog.reporting.Sarif.getSinkCpg(Sarif.java:187)
+	at ai.glog.plugins.devskim.rules.resolve.MemcpyResolver.isFalsePositive(MemcpyResolver.java:34)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.isFalsePositive(TriageAndRemediationCallableWorker.java:116)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:66)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+Oct 06, 2025 4:11:37 PM ai.glog.execute.workers.TriageAndRemediationCallableWorker isFalsePositive
+SEVERE: {
+  "ruleId" : "DS121708",
+  "ruleIndex" : null,
+  "rule" : null,
+  "kind" : "FAIL",
+  "level" : "NOTE",
+  "message" : {
+    "text" : "Problematic C function detected (memcpy)",
+    "markdown" : null,
+    "id" : null,
+    "arguments" : null,
+    "properties" : null
+  },
+  "analysisTarget" : null,
+  "locations" : [ {
+    "id" : null,
+    "physicalLocation" : {
+      "address" : null,
+      "artifactLocation" : {
+        "uri" : "Eigen/src/Core/arch/NEON/PacketMath.h",
+        "uriBaseId" : null,
+        "index" : null,
+        "description" : null,
+        "properties" : null
+      },
+      "region" : {
+        "startLine" : 1915,
+        "startColumn" : 2,
+        "endLine" : 1915,
+        "endColumn" : 32,
+        "charOffset" : 88336,
+        "charLength" : 30,
+        "byteOffset" : null,
+        "byteLength" : null,
+        "snippet" : {
+          "text" : "memcpy(to, &from, sizeof(from)",
+          "binary" : null,
+          "rendered" : {
+            "text" : "memcpy(to, &from, sizeof(from)",
+            "markdown" : "`memcpy(to, &from, sizeof(from)`",
+            "properties" : null
+          },
+          "properties" : null
+        },
+        "message" : null,
+        "sourceLanguage" : "c",
+        "properties" : null
+      },
+      "contextRegion" : null,
+      "properties" : null
+    },
+    "logicalLocations" : null,
+    "message" : null,
+    "annotations" : null,
+    "relationships" : null,
+    "properties" : null
+  } ],
+  "guid" : null,
+  "correlationGuid" : null,
+  "occurrenceCount" : null,
+  "partialFingerprints" : null,
+  "fingerprints" : null,
+  "stacks" : null,
+  "codeFlows" : null,
+  "graphs" : null,
+  "graphTraversals" : null,
+  "relatedLocations" : null,
+  "suppressions" : null,
+  "baselineState" : null,
+  "rank" : null,
+  "attachments" : null,
+  "hostedViewerUri" : null,
+  "workItemUris" : null,
+  "provenance" : null,
+  "fixes" : [ {
+    "description" : {
+      "text" : "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer",
+      "markdown" : null,
+      "id" : null,
+      "arguments" : null,
+      "properties" : null
+    },
+    "artifactChanges" : [ {
+      "artifactLocation" : {
+        "uri" : "Eigen/src/Core/arch/NEON/PacketMath.h",
+        "uriBaseId" : null,
+        "index" : null,
+        "description" : null,
+        "properties" : null
+      },
+      "replacements" : [ {
+        "deletedRegion" : {
+          "startLine" : null,
+          "startColumn" : null,
+          "endLine" : null,
+          "endColumn" : null,
+          "charOffset" : 88336,
+          "charLength" : 30,
+          "byteOffset" : null,
+          "byteLength" : null,
+          "snippet" : null,
+          "message" : null,
+          "sourceLanguage" : null,
+          "properties" : null
+        },
+        "insertedContent" : {
+          "text" : "memcpy_s(to, <size of to>,  &from,  sizeof(from)",
+          "binary" : null,
+          "rendered" : null,
+          "properties" : null
+        },
+        "properties" : null
+      } ],
+      "properties" : null
+    } ],
+    "properties" : null
+  } ],
+  "taxa" : null,
+  "webRequest" : null,
+  "webResponse" : null,
+  "properties" : {
+    "DevSkimSeverity" : "BestPractice",
+    "DevSkimConfidence" : "High"
+  }
+}
+java.util.NoSuchElementException: next on empty iterator
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	at scala.collection.Iterator$$anon$6.next(Iterator.scala:492)
+	at flatgraph.traversal.GenericSteps$.head$extension(Language.scala:80)
+	at ai.glog.cpg.analysis.SinkAnalyzer$.getSink(SinkAnalyzer.scala:29)
+	at ai.glog.cpg.analysis.SinkAnalyzer.getSink(SinkAnalyzer.scala)
+	at ai.glog.reporting.Sarif.getSinkCpg(Sarif.java:187)
+	at ai.glog.plugins.devskim.rules.resolve.MemcpyResolver.isFalsePositive(MemcpyResolver.java:34)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.isFalsePositive(TriageAndRemediationCallableWorker.java:116)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:66)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+Oct 06, 2025 4:11:37 PM ai.glog.execute.workers.TriageAndRemediationCallableWorker isFalsePositive
+SEVERE: next on empty iterator
+java.util.NoSuchElementException: next on empty iterator
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	at scala.collection.Iterator$$anon$6.next(Iterator.scala:492)
+	at flatgraph.traversal.GenericSteps$.head$extension(Language.scala:80)
+	at ai.glog.cpg.analysis.SinkAnalyzer$.getSink(SinkAnalyzer.scala:29)
+	at ai.glog.cpg.analysis.SinkAnalyzer.getSink(SinkAnalyzer.scala)
+	at ai.glog.reporting.Sarif.getSinkCpg(Sarif.java:187)
+	at ai.glog.plugins.devskim.rules.resolve.MemcpyResolver.isFalsePositive(MemcpyResolver.java:34)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.isFalsePositive(TriageAndRemediationCallableWorker.java:116)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:66)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+Oct 06, 2025 4:11:37 PM ai.glog.execute.workers.TriageAndRemediationCallableWorker isFalsePositive
+SEVERE: {
+  "ruleId" : "DS121708",
+  "ruleIndex" : null,
+  "rule" : null,
+  "kind" : "FAIL",
+  "level" : "NOTE",
+  "message" : {
+    "text" : "Problematic C function detected (memcpy)",
+    "markdown" : null,
+    "id" : null,
+    "arguments" : null,
+    "properties" : null
+  },
+  "analysisTarget" : null,
+  "locations" : [ {
+    "id" : null,
+    "physicalLocation" : {
+      "address" : null,
+      "artifactLocation" : {
+        "uri" : "Eigen/src/Core/arch/NEON/PacketMath.h",
+        "uriBaseId" : null,
+        "index" : null,
+        "description" : null,
+        "properties" : null
+      },
+      "region" : {
+        "startLine" : 1872,
+        "startColumn" : 2,
+        "endLine" : 1872,
+        "endColumn" : 32,
+        "charOffset" : 85493,
+        "charLength" : 30,
+        "byteOffset" : null,
+        "byteLength" : null,
+        "snippet" : {
+          "text" : "memcpy(to, &from, sizeof(from)",
+          "binary" : null,
+          "rendered" : {
+            "text" : "memcpy(to, &from, sizeof(from)",
+            "markdown" : "`memcpy(to, &from, sizeof(from)`",
+            "properties" : null
+          },
+          "properties" : null
+        },
+        "message" : null,
+        "sourceLanguage" : "c",
+        "properties" : null
+      },
+      "contextRegion" : null,
+      "properties" : null
+    },
+    "logicalLocations" : null,
+    "message" : null,
+    "annotations" : null,
+    "relationships" : null,
+    "properties" : null
+  } ],
+  "guid" : null,
+  "correlationGuid" : null,
+  "occurrenceCount" : null,
+  "partialFingerprints" : null,
+  "fingerprints" : null,
+  "stacks" : null,
+  "codeFlows" : null,
+  "graphs" : null,
+  "graphTraversals" : null,
+  "relatedLocations" : null,
+  "suppressions" : null,
+  "baselineState" : null,
+  "rank" : null,
+  "attachments" : null,
+  "hostedViewerUri" : null,
+  "workItemUris" : null,
+  "provenance" : null,
+  "fixes" : [ {
+    "description" : {
+      "text" : "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer",
+      "markdown" : null,
+      "id" : null,
+      "arguments" : null,
+      "properties" : null
+    },
+    "artifactChanges" : [ {
+      "artifactLocation" : {
+        "uri" : "Eigen/src/Core/arch/NEON/PacketMath.h",
+        "uriBaseId" : null,
+        "index" : null,
+        "description" : null,
+        "properties" : null
+      },
+      "replacements" : [ {
+        "deletedRegion" : {
+          "startLine" : null,
+          "startColumn" : null,
+          "endLine" : null,
+          "endColumn" : null,
+          "charOffset" : 85493,
+          "charLength" : 30,
+          "byteOffset" : null,
+          "byteLength" : null,
+          "snippet" : null,
+          "message" : null,
+          "sourceLanguage" : null,
+          "properties" : null
+        },
+        "insertedContent" : {
+          "text" : "memcpy_s(to, <size of to>,  &from,  sizeof(from)",
+          "binary" : null,
+          "rendered" : null,
+          "properties" : null
+        },
+        "properties" : null
+      } ],
+      "properties" : null
+    } ],
+    "properties" : null
+  } ],
+  "taxa" : null,
+  "webRequest" : null,
+  "webResponse" : null,
+  "properties" : {
+    "DevSkimSeverity" : "BestPractice",
+    "DevSkimConfidence" : "High"
+  }
+}
+java.util.NoSuchElementException: next on empty iterator
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	at scala.collection.Iterator$$anon$6.next(Iterator.scala:492)
+	at flatgraph.traversal.GenericSteps$.head$extension(Language.scala:80)
+	at ai.glog.cpg.analysis.SinkAnalyzer$.getSink(SinkAnalyzer.scala:29)
+	at ai.glog.cpg.analysis.SinkAnalyzer.getSink(SinkAnalyzer.scala)
+	at ai.glog.reporting.Sarif.getSinkCpg(Sarif.java:187)
+	at ai.glog.plugins.devskim.rules.resolve.MemcpyResolver.isFalsePositive(MemcpyResolver.java:34)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.isFalsePositive(TriageAndRemediationCallableWorker.java:116)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:66)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+Oct 06, 2025 4:11:37 PM ai.glog.execute.workers.TriageAndRemediationCallableWorker isFalsePositive
+SEVERE: next on empty iterator
+java.util.NoSuchElementException: next on empty iterator
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	at scala.collection.Iterator$$anon$6.next(Iterator.scala:492)
+	at flatgraph.traversal.GenericSteps$.head$extension(Language.scala:80)
+	at ai.glog.cpg.analysis.SinkAnalyzer$.getSink(SinkAnalyzer.scala:29)
+	at ai.glog.cpg.analysis.SinkAnalyzer.getSink(SinkAnalyzer.scala)
+	at ai.glog.reporting.Sarif.getSinkCpg(Sarif.java:187)
+	at ai.glog.plugins.devskim.rules.resolve.MemcpyResolver.isFalsePositive(MemcpyResolver.java:34)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.isFalsePositive(TriageAndRemediationCallableWorker.java:116)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:66)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+Oct 06, 2025 4:11:37 PM ai.glog.execute.workers.TriageAndRemediationCallableWorker isFalsePositive
+SEVERE: {
+  "ruleId" : "DS121708",
+  "ruleIndex" : null,
+  "rule" : null,
+  "kind" : "FAIL",
+  "level" : "NOTE",
+  "message" : {
+    "text" : "Problematic C function detected (memcpy)",
+    "markdown" : null,
+    "id" : null,
+    "arguments" : null,
+    "properties" : null
+  },
+  "analysisTarget" : null,
+  "locations" : [ {
+    "id" : null,
+    "physicalLocation" : {
+      "address" : null,
+      "artifactLocation" : {
+        "uri" : "Eigen/src/Core/arch/NEON/PacketMath.h",
+        "uriBaseId" : null,
+        "index" : null,
+        "description" : null,
+        "properties" : null
+      },
+      "region" : {
+        "startLine" : 1878,
+        "startColumn" : 2,
+        "endLine" : 1878,
+        "endColumn" : 32,
+        "charOffset" : 85886,
+        "charLength" : 30,
+        "byteOffset" : null,
+        "byteLength" : null,
+        "snippet" : {
+          "text" : "memcpy(to, &from, sizeof(from)",
+          "binary" : null,
+          "rendered" : {
+            "text" : "memcpy(to, &from, sizeof(from)",
+            "markdown" : "`memcpy(to, &from, sizeof(from)`",
+            "properties" : null
+          },
+          "properties" : null
+        },
+        "message" : null,
+        "sourceLanguage" : "c",
+        "properties" : null
+      },
+      "contextRegion" : null,
+      "properties" : null
+    },
+    "logicalLocations" : null,
+    "message" : null,
+    "annotations" : null,
+    "relationships" : null,
+    "properties" : null
+  } ],
+  "guid" : null,
+  "correlationGuid" : null,
+  "occurrenceCount" : null,
+  "partialFingerprints" : null,
+  "fingerprints" : null,
+  "stacks" : null,
+  "codeFlows" : null,
+  "graphs" : null,
+  "graphTraversals" : null,
+  "relatedLocations" : null,
+  "suppressions" : null,
+  "baselineState" : null,
+  "rank" : null,
+  "attachments" : null,
+  "hostedViewerUri" : null,
+  "workItemUris" : null,
+  "provenance" : null,
+  "fixes" : [ {
+    "description" : {
+      "text" : "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer",
+      "markdown" : null,
+      "id" : null,
+      "arguments" : null,
+      "properties" : null
+    },
+    "artifactChanges" : [ {
+      "artifactLocation" : {
+        "uri" : "Eigen/src/Core/arch/NEON/PacketMath.h",
+        "uriBaseId" : null,
+        "index" : null,
+        "description" : null,
+        "properties" : null
+      },
+      "replacements" : [ {
+        "deletedRegion" : {
+          "startLine" : null,
+          "startColumn" : null,
+          "endLine" : null,
+          "endColumn" : null,
+          "charOffset" : 85886,
+          "charLength" : 30,
+          "byteOffset" : null,
+          "byteLength" : null,
+          "snippet" : null,
+          "message" : null,
+          "sourceLanguage" : null,
+          "properties" : null
+        },
+        "insertedContent" : {
+          "text" : "memcpy_s(to, <size of to>,  &from,  sizeof(from)",
+          "binary" : null,
+          "rendered" : null,
+          "properties" : null
+        },
+        "properties" : null
+      } ],
+      "properties" : null
+    } ],
+    "properties" : null
+  } ],
+  "taxa" : null,
+  "webRequest" : null,
+  "webResponse" : null,
+  "properties" : {
+    "DevSkimSeverity" : "BestPractice",
+    "DevSkimConfidence" : "High"
+  }
+}
+java.util.NoSuchElementException: next on empty iterator
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	at scala.collection.Iterator$$anon$6.next(Iterator.scala:492)
+	at flatgraph.traversal.GenericSteps$.head$extension(Language.scala:80)
+	at ai.glog.cpg.analysis.SinkAnalyzer$.getSink(SinkAnalyzer.scala:29)
+	at ai.glog.cpg.analysis.SinkAnalyzer.getSink(SinkAnalyzer.scala)
+	at ai.glog.reporting.Sarif.getSinkCpg(Sarif.java:187)
+	at ai.glog.plugins.devskim.rules.resolve.MemcpyResolver.isFalsePositive(MemcpyResolver.java:34)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.isFalsePositive(TriageAndRemediationCallableWorker.java:116)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:66)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+Oct 06, 2025 4:11:37 PM ai.glog.execute.workers.TriageAndRemediationCallableWorker isFalsePositive
+SEVERE: next on empty iterator
+java.util.NoSuchElementException: next on empty iterator
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	at scala.collection.Iterator$$anon$6.next(Iterator.scala:492)
+	at flatgraph.traversal.GenericSteps$.head$extension(Language.scala:80)
+	at ai.glog.cpg.analysis.SinkAnalyzer$.getSink(SinkAnalyzer.scala:29)
+	at ai.glog.cpg.analysis.SinkAnalyzer.getSink(SinkAnalyzer.scala)
+	at ai.glog.reporting.Sarif.getSinkCpg(Sarif.java:187)
+	at ai.glog.plugins.devskim.rules.resolve.MemcpyResolver.isFalsePositive(MemcpyResolver.java:34)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.isFalsePositive(TriageAndRemediationCallableWorker.java:116)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:66)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+Oct 06, 2025 4:11:37 PM ai.glog.execute.workers.TriageAndRemediationCallableWorker isFalsePositive
+SEVERE: next on empty iterator
+java.util.NoSuchElementException: next on empty iterator
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	at scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	at scala.collection.Iterator$$anon$6.next(Iterator.scala:492)
+	at flatgraph.traversal.GenericSteps$.head$extension(Language.scala:80)
+	at ai.glog.cpg.analysis.SinkAnalyzer$.getSink(SinkAnalyzer.scala:29)
+	at ai.glog.cpg.analysis.SinkAnalyzer.getSink(SinkAnalyzer.scala)
+	at ai.glog.reporting.Sarif.getSinkCpg(Sarif.java:187)
+	at ai.glog.plugins.devskim.rules.resolve.MemcpyResolver.isFalsePositive(MemcpyResolver.java:34)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.isFalsePositive(TriageAndRemediationCallableWorker.java:116)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:66)
+	at ai.glog.execute.workers.TriageAndRemediationCallableWorker.call(TriageAndRemediationCallableWorker.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
